@@ -10,8 +10,8 @@ class DocenteController extends Controller
         $query = Docente::all();
         return view('docentes',compact('query'));
     }
-    function delete($codigo2){
-        Docente::destroy($codigo2);
+    function delete($codigo){
+        Docente::destroy($codigo);
         return redirect()->route('verDocentes');
     }
 }

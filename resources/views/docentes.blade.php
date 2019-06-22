@@ -1,42 +1,45 @@
 @extends('master')
 @section('content')
-
-<td><button type="button" class="btn btn-primary">Agregar</button></td>
-<table class="table table-striped thead-dark" id="tabla">
-    <thead>
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    <h5 align="center"> Administracion de docentes </h5>
+    </div>
+<hr>
+<td><button type="button" class="btn btn-info"><i class="far fa-address-card"></i> Agregar docente </button></td>
+<table class="table table-hover" id="tablaAcademias">
+    <thead class="thead-dark">
       <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellidos</th>
-        <th scope="col">Puesto</th>
-        <th scope="col">Contraseña</th>
-        <th scope="col">Academia</th>
-        <th scope="col">Actualizar</th>
-        <th scope="col">Eliminar</th>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Puesto</th>
+        <th>Contraseña</th>
+        <th>Academia</th>
+        <th>Actualizar</th>
+        <th>Eliminar</th>
       </tr>
       </tr>
     </thead>
     <tbody>
     @foreach ($query as $que)
           <tr>
-        <td>{{ $que->id }}</td>
-        <td>{{ $que->Nombre }}</td>
-        <td>{{ $que->Apellidos }}</td> 
-        <td>{{ $que->Puesto }}</td> 
-        <td>{{ $que->Contraseña }}</td> 
-        <td>{{ $que->academia }}</td>  
-        <td><button type="button" class="btn btn-primary">Actualizar</button></td>
-        <td> <a href="{{ route("delDocente",$que->id) }}" class="btn btn-danger"> Eliminar </a></td>
+        <td class="h6">{{ $que->Clave }}</td>
+        <td class="h6">{{ $que->Nombre }}</td>
+        <td class="h6">{{ $que->Apellidos }}</td> 
+        <td class="h6">{{ $que->Puesto }}</td> 
+        <td class="h6">{{ $que->Contraseña }}</td> 
+        <td class="h6">{{ $que->academia }}</td>  
+        <td><button type="button" class="btn btn-primary"> <i class="fas fa-pencil-alt"></i> </button></td>
+        <td> <a href="{{ route("delDocente",$que->Clave) }}" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </a> </td>
       </tr>
     @endforeach 
       
     </tbody>
   </table>
+</div>
 @endsection
-@section('codejs')
+@section('codigoJs')
 <script>
-  $(document).ready( function () {
-    $('#tabla').DataTable();
-} );
+    $('#tablaAcademias').DataTable();
 </script>
 @endsection()

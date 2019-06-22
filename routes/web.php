@@ -19,9 +19,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/docentes','DocenteController@prueba')->name('verDocentes');
+Route::get('/docentes/{codigo}','DocenteController@delete')->name('delDocente');
+
 Route::get('/academias','AcademiaController@index')->name('verAcademias');
 Route::get('/academias/{codigo}','AcademiaController@delete')->name('delAcademia');
 
-
-Route::get('/docentes','DocenteController@prueba')->name('verDocentes');
-Route::get('/docentes/{codigo}','DocenteController@delete')->name('delDocente');

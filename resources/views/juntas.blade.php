@@ -1,38 +1,40 @@
 @extends('master')
 
-@section('titulo', 'Juntas de la academia')
-
 @section('content')
-<h4> Docentes </h4>
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    <h5 align="center"> Administracion de academias </h5>
+  </div>
 <hr>
-<td><button type="button" class="btn btn-success"><i class="far fa-address-card"></i> Agregar</button></td>
-<table class="table table-striped thead-dark" id="table">
-    <thead>
+<td><button type="button" class="btn btn-info"><i class="far fa-address-card"></i> Agregar academia</button></td>
+<table class="table table-hover" id="tablaAcademias">
+    <thead class="thead-dark">
       <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Numero de Docentes</th>
-        <th scope="col">Actualizar</th>
-        <th scope="col">Eliminar</th>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Numero de Docentes</th>
+        <th>Actualizar</th>
+        <th>Eliminar</th>
       </tr>
       </tr>
     </thead>
     <tbody>
         @foreach ($query as $que)
         <tr>
-        <td>{{ $que->id }}</td>
-        <td>{{ $que->Nombre }}</td>
-        <td>{{ $que->Numero_docentes }}</td> 
+        <td class="h6">{{ $que->id }}</td>
+        <td class="h6">{{ $que->Nombre }}</td>
+        <td class="h6">{{ $que->Numero_docentes }}</td> 
         <td><button type="button" class="btn btn-primary"> <i class="fas fa-pencil-alt"></i> </button></td>
         <td> <a href="{{ route("delAcademia",$que->id) }}" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </a></td>
       </tr>
       @endforeach
     </tbody>
-  </table>
+</table>
+</div>
 @endsection
 
-@section('codigojs')
+@section('codigoJs')
 <script>
-  $('#table').DataTable();
-</script>
+  $('#tablaAcademias').DataTable();
+</script> 
 @endsection
