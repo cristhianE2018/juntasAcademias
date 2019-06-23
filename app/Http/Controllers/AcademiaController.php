@@ -20,10 +20,10 @@ class AcademiaController extends Controller
             $academia->Nombre = $request->txtnombre;
             $academia->Numero_Docentes = $request->txtnumero;
             $academia->save();
-            return redirect()->route('verAcademias');
+            return redirect()->route('verAcademias',["mensaje"=>"Agregado"]);
         }
         else{
-            echo "<h1> Error al agregar: No deben ir campos vacios </h1>";
+            return redirect()->route('verAcademias',["mensaje"=>"error"]);
         }
     }
 
@@ -33,7 +33,7 @@ class AcademiaController extends Controller
             Academia::destroy($codigo);
             return redirect()->route('verAcademias');
         } catch (\Throwable $th) {
-            echo "<h1> Error al eliminar: La carrera esta asignada a docentes </h1>";
+            echo "Error al eliminar la carrera";
         }
         
     }

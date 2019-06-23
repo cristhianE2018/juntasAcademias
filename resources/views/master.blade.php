@@ -34,6 +34,7 @@
                   </nav>
     </header>
     </div>
+
     @yield('content')
 
     <script src="{{ asset('js/jquery.js') }}"></script>

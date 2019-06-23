@@ -20,6 +20,7 @@
                                         <strong>Numero docentes : </strong>
                                         <input type="number" name="txtnumero" class="form-control" placeholder="añade numero">
                                     </div>
+                                    
                                 <div class="form-group">
                                         <button type="submit" class="btn btnagregar btn-block" id="btnAgregarNuevo"><i class="fas fa-save"></i> Guardar</button>
                                 </div>

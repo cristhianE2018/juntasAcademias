@@ -2,9 +2,23 @@
 
 @section('content')
 <div class="container">
-  <div class="alert alert-success" role="alert">
+  <div class="alert" role="alert">
     <h5 align="center"> Administracion de academias </h5>
   </div>
+  <!-- VALIDACION SI EL REGISTRO SE AÑADE O NO -->
+  @if(isset($_GET['mensaje']))
+  @if($_GET['mensaje']=="Agregado")
+  <div class="alert alert-success" role="alert">
+    <h5 align="center"> <i class="far fa-check-square"></i> El registro se añadio exitosamente! :) </h5>
+  </div>
+  @endif
+  @if($_GET['mensaje']=="error")
+  <div class="alert alert-danger" role="alert">
+    <h5 align="center"> <i class="fas fa-times"></i> Error al agregar: No deben ir campos vacios :/ </h5>
+  </div>
+  @endif
+  @endif
+
 <hr>
 @include('Academias.modal-agregar')
 @include('Academias.modal-actualizar')
