@@ -9,20 +9,23 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        @csrf
+                    <form action="{{ route('addAcademia') }}" method="GET">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <strong>Nombre de la academia : </strong>
-                                    <input type="text" name="matricula" class="form-control" placeholder="añade nombre">
+                                    <input type="text" name="txtnombre" class="form-control" placeholder="añade nombre">
+                                </div>
+                                <div class="form-group">
+                                        <strong>Numero docentes : </strong>
+                                        <input type="number" name="txtnumero" class="form-control" placeholder="añade numero">
+                                    </div>
+                                <div class="form-group">
+                                        <button type="submit" class="btn btnagregar btn-block" id="btnAgregarNuevo"><i class="fas fa-save"></i> Guardar</button>
                                 </div>
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btnagregar btn-block" id="btnAgregarNuevo"><i class="fas fa-save"></i> Guardar</button>
                 </div>
             </div>
         </div>
