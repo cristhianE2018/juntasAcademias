@@ -23,7 +23,7 @@ class AcademiaController extends Controller
             return redirect()->route('verAcademias');
         }
         else{
-            echo "Falta informacion";
+            echo "<h1> Error al agregar: No deben ir campos vacios </h1>";
         }
     }
 
@@ -33,7 +33,7 @@ class AcademiaController extends Controller
             Academia::destroy($codigo);
             return redirect()->route('verAcademias');
         } catch (\Throwable $th) {
-            echo "No se puede eliminar la carrera";
+            echo "<h1> Error al eliminar: La carrera esta asignada a docentes </h1>";
         }
         
     }

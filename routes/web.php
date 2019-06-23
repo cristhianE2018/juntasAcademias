@@ -25,4 +25,3 @@ Route::get('/docentes/{codigo}','DocenteController@delete')->name('delDocente');
 Route::get('/academias','AcademiaController@index')->name('verAcademias');
 Route::get('/academias/agregar','AcademiaController@agregar')->name('addAcademia');
 Route::get('/academias/{codigo}','AcademiaController@delete')->name('delAcademia');
-
