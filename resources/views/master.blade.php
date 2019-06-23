@@ -12,35 +12,32 @@
 </head>
 <body>
     <div class="container">
-        <div class="row d-flex">
+        <div class="row">
             <div class="col-md-12">
-               <center> <img src="../img/tec_cos.jpg"> </center>
+                <img src="../img/tec_cos.jpg">
             </div>
         </div>
     
     <header>
-        <div class="contenedor">
-            <div class="logo izquierda">
-                <p><a href="#">ITSCO</a></p>
-            </div>
-
-            <div class="derecha">
-                <nav class="menu">
-                    <ul>
-                        <li>
-                            <a href="#">Inicio<i class=""></i></a>
-                        </li>
-                        <li><a href="{{ route("verDocentes") }}">Docentes<i ></i></a></li>
-                        <li><a href="{{ route("verAcademias") }}">Academias<i ></i></a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+            <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="#"> Juntas de academias </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="{{ route('verAcademias') }}"> Academias <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="{{ route('verDocentes') }}"> Docentes </a>
+                        <a class="nav-item nav-link" href="#"> Salir </a>
+                      </div>
+                    </div>
+                  </nav>
     </header>
     </div>
     @yield('content')
 
     <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('data-tables/datatables.min.js') }}"></script>
 </body>
 </html>

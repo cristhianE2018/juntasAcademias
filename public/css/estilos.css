@@ -349,7 +349,12 @@ footer .copyright {
 	min-width: 100%;
 	min-height: 300px;
 }
-
+.btn_add{
+	background-color: #BB1F35;
+}
+.btnagregar{
+	background-color: #BB1F35;
+}
 .formulario input[type="submit"]{
 	padding: 15px;
 	background: #595959;
@@ -364,4 +369,13 @@ footer .copyright {
 
 .formulario input[type="submit"]:hover{
 	background: #BB1F35;
+}
+.navbar{
+	background-color: #BB1F35;
+}
+.navbar a{
+	color: floralwhite;
+}
+.navbar a:hover{
+	color: floralwhite;
 }

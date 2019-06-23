@@ -23,7 +23,7 @@
     <tbody>
     @foreach ($query as $que)
           <tr>
-        <td class="h6">{{ $que->Clave }}</td>
+        <td class="h6"><i class="fas fa-key"></i> {{ $que->Clave }}</td>
         <td class="h6">{{ $que->Nombre }}</td>
         <td class="h6">{{ $que->Apellidos }}</td> 
         <td class="h6">{{ $que->Puesto }}</td> 

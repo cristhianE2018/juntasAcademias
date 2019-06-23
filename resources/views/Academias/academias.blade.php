@@ -6,7 +6,8 @@
     <h5 align="center"> Administracion de academias </h5>
   </div>
 <hr>
-<td><button type="button" class="btn btn-info"><i class="far fa-address-card"></i> Agregar academia</button></td>
+@include('Academias.modal-agregar')
+<a href="#modalagregar" data-toggle="modal" class="btn btn_add"> <i class="far fa-address-card"></i> Agregar academia </a>
 <table class="table table-hover" id="tablaAcademias">
     <thead class="thead-dark">
       <tr>
@@ -21,7 +22,7 @@
     <tbody>
         @foreach ($query as $que)
         <tr>
-        <td class="h6">{{ $que->id }}</td>
+        <td class="h6"> <i class="fas fa-key"></i> {{ $que->id }}</td>
         <td class="h6">{{ $que->Nombre }}</td>
         <td class="h6">{{ $que->Numero_docentes }}</td> 
         <td><button type="button" class="btn btn-primary"> <i class="fas fa-pencil-alt"></i> </button></td>
@@ -32,7 +33,6 @@
 </table>
 </div>
 @endsection
-
 @section('codigoJs')
 <script>
   $('#tablaAcademias').DataTable();

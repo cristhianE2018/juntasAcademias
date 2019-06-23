@@ -8,7 +8,7 @@ class AcademiaController extends Controller
 {
     function index(){
         $query = Academia::all();
-        return view('juntas',compact('query'));
+        return view('Academias.academias',compact('query'));
     }
     function delete($codigo){
         try {
