@@ -20,10 +20,12 @@ Route::get('/', function () {
 });
 
 Route::get('/docentes','DocenteController@prueba')->name('verDocentes');
+Route::get('/docentes/agregar','DocenteController@agregar')->name('addDocente');
 Route::get('/docentes/{codigo}','DocenteController@delete')->name('delDocente');
 
+
+
+
 Route::get('/academias','AcademiaController@index')->name('verAcademias');
-
 Route::get('/academias/agregar','AcademiaController@agregar')->name('addAcademia');
-
 Route::get('/academias/{codigo}','AcademiaController@delete')->name('delAcademia');

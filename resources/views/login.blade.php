@@ -1,22 +1,31 @@
-@extends('master')
-
-@section('titulo', 'Login')
-
-@section('content')
-<div class="login-box">
-		<img class="avatar" src="img/logosistemas.jpg" alt="prueba">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('fontawesome-free/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('data-tables/datatables.min.css') }}">
+</head>
+<body>
+	<div class="login-box">
+		<img class="avatar" src="Imagenes/logosistemas.jpg" alt="prueba">
 		<h1>Ingeniería en Sistemas Computacionales</h1>
 		<form>
 			<label for="Usuario">Usuario</label>
 			<input type="text" placeholder="Ingresar Usuario">
-
+	
 			<label for="Contraseña">Contraseña</label>
 			<input type="password" placeholder="Ingresar Contraseña">
-
+	
 			<input type="submit" value="Loguear">
 			<a href="#">Olvido su contraseña?</a>
 			<br>
 			<a href="#">Usted no tiene cuenta?</a>
 		</form>
 	</div>
-@stop
+</body>
+</html>

@@ -5,7 +5,14 @@
     <h5 align="center"> Administracion de docentes </h5>
     </div>
 <hr>
-<td><button type="button" class="btn btn-info"><i class="far fa-address-card"></i> Agregar docente </button></td>
+
+@include('Docentes.modal-agregar')
+@include('Docentes.modal-actualizar')
+
+
+<a href="#modalagregar" data-toggle="modal"class="btn btn-info"><i class="far fa-adress-card"></i>Agregar Docente</a>
+
+
 <table class="table table-hover" id="tablaAcademias">
     <thead class="thead-dark">
       <tr>
@@ -29,8 +36,8 @@
         <td class="h6">{{ $que->Puesto }}</td> 
         <td class="h6">{{ $que->Contraseña }}</td> 
         <td class="h6">{{ $que->academia }}</td>  
-        <td><button type="button" class="btn btn-primary"> <i class="fas fa-pencil-alt"></i> </button></td>
-        <td> <a href="{{ route("delDocente",$que->Clave) }}" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </a> </td>
+        <td> <a href="#modalactualizar" data-toggle="modal" class="btn btn-primary"> <i class="fas fa-pencil-alt"></i> </a></td>
+        <td> <a href="{{ route("delDocente",$que->id) }}" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </a> </td>
       </tr>
     @endforeach 
       

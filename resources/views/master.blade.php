@@ -28,6 +28,7 @@
                       <div class="navbar-nav">
                         <a class="nav-item nav-link active" href="{{ route('verAcademias') }}"> Academias <span class="sr-only">(current)</span></a>
                         <a class="nav-item nav-link" href="{{ route('verDocentes') }}"> Docentes </a>
+                        <a class="nav-item nav-link"> Juntas </a>
                         <a class="nav-item nav-link" href="#"> Salir </a>
                       </div>
                     </div>
