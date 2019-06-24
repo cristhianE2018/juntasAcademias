@@ -7,14 +7,25 @@
   </div>
   <!-- VALIDACION SI EL REGISTRO SE AÑADE O NO -->
   @if(isset($_GET['mensaje']))
-  @if($_GET['mensaje']=="Agregado")
+  @if($_GET['mensaje']=="Exito")
   <div class="alert alert-success" role="alert">
     <h5 align="center"> <i class="far fa-check-square"></i> El registro se añadio exitosamente! :) </h5>
   </div>
   @endif
-  @if($_GET['mensaje']=="error")
+  @if($_GET['mensaje']=="Exito2")
+  <div class="alert alert-success" role="alert">
+    <h5 align="center"> <i class="far fa-check-square"></i> Eliminado Exitosamente! :) </h5>
+  </div>
+  @endif
+  @if($_GET['mensaje']=="Error1")
   <div class="alert alert-danger" role="alert">
     <h5 align="center"> <i class="fas fa-times"></i> Error al agregar: No deben ir campos vacios :/ </h5>
+  </div>
+  @endif
+  @if($_GET['mensaje']=="Error2")
+  <div class="alert alert-danger" role="alert">
+    <h5 align="center"> <i class="fas fa-times"></i> Error al eliminar: No se puede eliminar esta carrera ya que hay
+      docentes que pertenecen a ella, informar al DBA para eliminacion en cascada :/ </h5>
   </div>
   @endif
   @endif

@@ -20,10 +20,10 @@ class AcademiaController extends Controller
             $academia->Nombre = $request->txtnombre;
             $academia->Numero_Docentes = $request->txtnumero;
             $academia->save();
-            return redirect()->route('verAcademias',["mensaje"=>"Agregado"]);
+            return redirect()->route('verAcademias',["mensaje"=>"Exito"]);
         }
         else{
-            return redirect()->route('verAcademias',["mensaje"=>"error"]);
+            return redirect()->route('verAcademias',["mensaje"=>"Error1"]);
         }
     }
 
@@ -31,9 +31,9 @@ class AcademiaController extends Controller
     function delete($codigo){
         try {
             Academia::destroy($codigo);
-            return redirect()->route('verAcademias');
+            return redirect()->route('verAcademias',["mensaje"=>"Exito2"]);
         } catch (\Throwable $th) {
-            echo "Error al eliminar la carrera";
+            return redirect()->route('verAcademias',["mensaje"=>"Error2"]);
         }
         
     }

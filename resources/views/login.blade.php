@@ -13,13 +13,13 @@
 <body>
 	<div class="login-box">
 		<img class="avatar" src="Imagenes/logosistemas.jpg" alt="prueba">
-		<h1>Ingeniería en Sistemas Computacionales</h1>
-		<form>
+		<h1> Inicio de Sesion </h1>
+		<form method="GET" action="{{ route('entrar') }}">
 			<label for="Usuario">Usuario</label>
-			<input type="text" placeholder="Ingresar Usuario">
+			<input type="text" placeholder="Ingresar Usuario" name="txtusuario">
 	
 			<label for="Contraseña">Contraseña</label>
-			<input type="password" placeholder="Ingresar Contraseña">
+			<input type="password" placeholder="Ingresar Contraseña" name="txtcontraseña">
 	
 			<input type="submit" value="Loguear">
 			<a href="#">Olvido su contraseña?</a>

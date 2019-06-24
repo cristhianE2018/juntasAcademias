@@ -20,18 +20,25 @@
                                 <input type="text" name="txtapellidos" class="form-control" placeholder="Ingresa los Apellidos">
                             </div>
                             <div class="form-group">
-                                <strong>Puesto: </strong>
-                                <input type="text" name="txtpuesto" class="form-control" placeholder="Ingresa el Puesto">
+                               <strong> Puesto: </strong>
+                               <select class="form-control" name="txtpuesto"> 
+                                   <option value="Docente"> Docente </option>
+                                   <option value="Jefe de Carrera"> Jefe de Carrera </option>
+                                   <option value="Presidente"> Presidente </option>
+                               </select>
                             </div>
                             <div class="form-group">
                                 <strong>Contraseña: </strong>
                                 <input type="text" name="txtcontraseña" class="form-control" placeholder="Ingresa la Contraseña">
                             </div>
                             <div class="form-group">
-                                    <strong>Academia: </strong>
-                                    <input type="number" name="txtacademia" class="form-control" placeholder="">
-                                </div>
-                                
+                                    <strong>Academia!: </strong>
+                                    <select class="form-control"  name="txtacademia">
+                                    @foreach ($academias as $aca)
+                                        <option value= "{{ $aca->id }}"> {{ $aca->id}} {{ $aca->Nombre }} </option>
+                                    @endforeach
+                                    </select>
+                            </div>
                             <div class="form-group">
                                     <button type="submit" class="btn btnagregar btn-block" id="btnAgregarNuevo"><i class="fas fa-save"></i> Guardar</button>
                             </div>
