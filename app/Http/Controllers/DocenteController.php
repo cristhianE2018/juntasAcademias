@@ -45,17 +45,21 @@ class DocenteController extends Controller
     }
     //VALIDACION PARA LOS TIPOS DE USUARIO QUE PUEDAN INGRESAR
     function validacion(Request $request){
-        $puesto = Docente::select('Puesto')->where('Nombre',"=",$request->txtusuario)->first(); //DOCENTE
+        $puesto = Docente::select('Puesto')->where('Nombre',"=",$request->txtusuario
+        )->where('contraseña','=',$request->txtcontraseña)->first(); //DOCENTE
         $academia = Docente::select('academia')->where('Nombre',"=",$request->txtusuario)->first();
         $juntas = Junta::all()->where('academia','=',$academia->academia);
         $aca = Academia::select('Nombre')->where('id',"=",$academia->academia)->first();
         if($puesto->Puesto=="Jefe de Carrera"){
-            return redirect()->route('verDocentes');
+            return 'view';
         }
         else if($puesto->Puesto=="Docente"){
             return view('Juntas.juntas',compact('juntas'),["academia"=>$aca->Nombre,
             "usuario"=>$request->txtusuario,
             "puesto"=>"Docente"]);
+        }
+        else if($puesto->Puesto=="SuperAdmin"){
+            return redirect()->route('verDocentes');
         }
     }
 }
