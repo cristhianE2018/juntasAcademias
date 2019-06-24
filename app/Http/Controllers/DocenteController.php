@@ -51,7 +51,10 @@ class DocenteController extends Controller
         $juntas = Junta::all()->where('academia','=',$academia->academia);
         $aca = Academia::select('Nombre')->where('id',"=",$academia->academia)->first();
         if($puesto->Puesto=="Jefe de Carrera"){
-            return 'view';
+            return view('Juntas.verjuntas',compact('juntas'),["academia"=>$aca->Nombre,
+            "usuario"=>$request->txtusuario,
+            "puesto"=>"Docente",
+            "academia"=>$academia->academia]);
         }
         else if($puesto->Puesto=="Docente"){
             return view('Juntas.juntas',compact('juntas'),["academia"=>$aca->Nombre,

@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="{{ asset('data-tables/datatables.min.css') }}">
 </head>
 <body>
+	<br>
+	<hr>
+	<div class="container">
 	<div class="login-box">
-		<img class="avatar" src="Imagenes/logosistemas.jpg" alt="prueba">
 		<h1> Inicio de Sesion </h1>
 		<form method="GET" action="{{ route('entrar') }}">
 			<label for="Usuario">Usuario</label>
@@ -26,6 +28,7 @@
 			<br>
 			<a href="#">Usted no tiene cuenta?</a>
 		</form>
+	</div>
 	</div>
 </body>
 </html>

@@ -31,3 +31,6 @@ Route::get('/academias/{codigo}','AcademiaController@delete')->name('delAcademia
 
 //RUTAS PARA EL INICIO DE SESION
 Route::get('/login/inicio','DocenteController@validacion')->name('entrar');
+
+Route::get('login/inicioo/{codigo}','JuntaController@agregar')->name('entrarjefe');
+Route::get('/juntas/{codigo}','JuntaController@eliminar')->name('delJunta');
